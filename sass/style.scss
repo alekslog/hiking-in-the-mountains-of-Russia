@@ -1,0 +1,1449 @@
+/* Шрифты */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,800&display=swap");
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+[class*="__container"] {
+    max-width: 1230px;
+    margin: 0px auto;
+    // отступы безопасности, с соответствующим увеличением max-width на 30px
+    padding: 0 15px;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.relative-container {
+    position: relative;
+}
+
+//--------------------------------------------------HEADER-------------------------- ----------------------------------//
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+
+    &__container {
+        min-height: 147px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__block {
+        display: flex;
+        flex: 1 0 auto;
+        align-items: center;
+
+        @media (max-width: 991.98px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        flex: 0 0 245px;
+        z-index: 5;
+
+        @media (max-width: 991.98px) {
+            flex: 0 0 106px;
+        }
+    }
+
+    &__menu {
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+
+    &__tel {
+        flex: 0 0 214px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media (max-width: 991.98px) {
+            flex: 0 0 208px;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-start;
+
+    &__list {
+        display: flex;
+        //gap: 40px; На старых устройствах может не поддерживаться
+    }
+
+    &__item {
+        padding: 0px 0px 0px 46px;
+    }
+
+    &__link {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 16px;
+        color: #fff;
+        line-height: 1.6;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &_color_black {
+            color: #000000 !important;
+        }
+    }
+}
+
+.tel {
+    color: #fff;
+    font-weight: 700;
+    font-size: 19px;
+
+    &_color_black {
+        color: #000000;
+    }
+}
+
+.close-icon-menu,
+.icon-menu {
+    display: none;
+}
+
+@media (max-width: 991.98px) {
+    .close-icon-menu,
+    .icon-menu {
+        display: flex;
+        position: relative;
+        flex: 0 0 30px;
+        height: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0px 0px 0px 20px;
+    }
+
+    .icon-menu::before,
+    .icon-menu::after {
+        content: "";
+        background: #fff;
+        height: 2px;
+    }
+
+    .icon-menu span {
+        background-color: #fff;
+        height: 2px;
+    }
+
+    .close-icon-menu {
+        display: none;
+    }
+
+    .close-icon-menu::before,
+    .close-icon-menu::after {
+        content: "";
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+    }
+
+    .close-icon-menu::before {
+        transform: rotate(45deg);
+    }
+
+    .close-icon-menu::after {
+        transform: rotate(-45deg);
+    }
+}
+
+// Внешний вид адаптивного меню
+@media (max-width: 991.98px) {
+    .menu__body {
+        &_header {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #1d609f;
+            padding: 130px 15px 30px 15px;
+            transition: left 0.3s ease 0s;
+        }
+    }
+
+    .header:target .menu__body {
+        left: 0;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &_footer {
+            align-items: flex-start !important;
+        }
+    }
+
+    .menu__item {
+        margin: 0px 0px 25px 0px;
+    }
+
+    .menu__link {
+        color: #fff;
+        font-size: 20px;
+    }
+    .header:target.header {
+        position: fixed;
+    }
+
+    .header:target .icon-menu {
+        display: none;
+    }
+
+    // Прокладка для меню
+    .header:target .menu__body:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 130px;
+        width: 100%;
+        background-color: #1d609f;
+        transition-delay: 0.1s;
+        transition: left 0.3s ease 0s;
+    }
+
+    .header:target .close-icon-menu {
+        display: flex;
+    }
+}
+
+//----------------------------------------------------MAIN--------------------------------------------------------------
+
+//--------------------------------------------------TREKKING------------------------------------------------------------
+.trekking {
+    background-image: url(../img/trekking/back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__container {
+        min-height: 772px;
+        position: relative;
+        padding-top: 293px;
+
+        @media (max-width: 597.98px) {
+            padding-top: 200px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__h1-block-text {
+        flex: 0 1 100%;
+    }
+
+    &__trekking-button {
+        margin: 32px 0px 0px 0px;
+    }
+
+    &__socials-links {
+        margin: 110px 0 0 0;
+        flex: 0 1 100%;
+        display: flex;
+        justify-content: end;
+        z-index: 10;
+
+        :not(:last-child) {
+            padding: 0 17px 0 0;
+        }
+
+        @media (max-width: 1227px) {
+            justify-content: start;
+        }
+
+        @media (max-width: 767.98px) {
+            margin: 50px 0 0 0;
+
+            :not(:last-child) {
+                padding: 0 90px 0 0;
+            }
+        }
+    }
+
+    &__vertical-lines {
+        position: absolute;
+        width: 1196px;
+        height: 776.04px;
+    }
+}
+
+.vertical-lines {
+    margin: 4px 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &__line {
+        position: absolute;
+        width: 0px;
+        height: 759px;
+        opacity: 0.23;
+        border: 1px solid #ffffff;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-delay: 1s;
+        top: 0;
+    }
+
+    &__vertical-line-1 {
+        left: 0;
+    }
+
+    //  Ниже следует анимация для каждой линии
+    &__vertical-line-2 {
+        animation-name: vertical-line-2;
+
+        @keyframes vertical-line-2 {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 246px;
+            }
+        }
+    }
+
+    &__vertical-line-3 {
+        animation-name: vertical-line-3;
+
+        @keyframes vertical-line-3 {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 491px;
+            }
+        }
+    }
+
+    &__vertical-line-4 {
+        animation-name: vertical-line-4;
+
+        @keyframes vertical-line-4 {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 744px;
+            }
+        }
+    }
+
+    &__vertical-line-5 {
+        animation-name: vertical-line-5;
+
+        @keyframes vertical-line-5 {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 1000px;
+            }
+        }
+    }
+
+    &__vertical-line-6 {
+        animation-name: vertical-line-6;
+
+        @keyframes vertical-line-6 {
+            0% {
+                left: 0px;
+            }
+
+            100% {
+                left: 1200px;
+            }
+        }
+    }
+}
+
+.h1-block-text {
+    position: relative;
+
+    &__transparent-text {
+        position: absolute;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 93px;
+        line-height: 1.21em;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #f5f9fc;
+        opacity: 0.2;
+        top: -45px;
+        left: 4px;
+    }
+
+    &__title {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 45px;
+        line-height: 1.22em;
+    }
+
+    &__title-white {
+        color: #fff;
+    }
+
+    &__text {
+        max-width: 473px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 1.47em;
+    }
+
+    &__text-white {
+        color: #fff;
+    }
+}
+
+.big-button {
+    flex: 0 1 100%;
+    background-color: #0266c1;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.375em;
+    color: #fff;
+    padding: 21px 39px;
+    max-width: 247px;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover {
+        opacity: 0.95;
+        background-color: #ffffff;
+        color: #0266c1;
+        transition: all ease 0.75s;
+    }
+}
+
+.social-link {
+    &__rectangle-blue {
+        opacity: 0.43;
+        background-color: #0266c1;
+        padding: 5px 5px 5px 5px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// ===================================================CLOUDS============================================================
+.clouds {
+    position: absolute;
+    top: 405px;
+    height: 555.88px;
+    background-image: url(../img/trekking/clouds.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+// ===================================================TOURS============================================================
+
+.tours {
+    &__container {
+        position: relative;
+    }
+
+    &__wraper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__show-all-tours {
+        text-align: center;
+        margin: 60px auto;
+    }
+
+    &__navigation-arrows {
+        padding-top: 34px;
+
+        @media (max-width: 599.98px) {
+            position: absolute;
+            top: 369px;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 599.98px) {
+            position: absolute;
+            top: 369px;
+            left: 0;
+            z-index: 1000;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 374px) {
+            top: 409px;
+        }
+    }
+
+    &__background {
+        z-index: -1;
+        top: -70px;
+        right: -1423px;
+        position: absolute;
+
+        @media (max-width: 1161px) {
+            display: none;
+        }
+    }
+}
+
+.block-text {
+    position: relative;
+
+    &__title {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 35px;
+        line-height: 1.22em;
+    }
+
+    &__transparent-text {
+        width: max-content;
+        position: absolute;
+        top: -20px;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 55px;
+        line-height: 1.21em;
+        opacity: 0.03;
+    }
+}
+
+.navigation-arrows {
+    display: flex;
+
+    :hover {
+        cursor: pointer;
+    }
+
+    :not(:last-child) {
+        margin: 0px 4px 0px 0px;
+    }
+
+    &__rectangle {
+        width: 37px;
+        height: 35px;
+        left: 1280px;
+        background: #0266c1;
+        &:hover {
+            background: #002649;
+        }
+    }
+
+    &__left {
+        padding: 13px 12px 17px 12px;
+    }
+
+    &__right {
+        padding: 13px 12px 17px 12px;
+    }
+}
+
+.tour-slider {
+    margin: 43px 0px 0px 0px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.swiper-wrapper {
+    display: flex;
+    touch-action: pan-y;
+}
+
+.tour-slide {
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &_slide-1 {
+        background-image: url(../img/tours/elbrus.png);
+    }
+
+    &_slide-2 {
+        background-image: url(../img/tours/belukha.png);
+    }
+
+    &_slide-3 {
+        background-image: url(../img/tours/fisht.png);
+    }
+}
+
+.tour {
+    display: flex;
+    flex-direction: column;
+    width: 384.09px;
+    height: 412px;
+
+    &__row-wraper {
+        display: flex;
+    }
+
+    &__background {
+        display: flex;
+        position: absolute;
+    }
+
+    &__content-wrapper {
+        padding: 0px 0px 0px 20px;
+
+        @media (max-width: 1227px) {
+            padding: 0px 5px 0px 5px;
+        }
+    }
+
+    &__row-wrapper {
+        margin: 206px 0px 0px 0px;
+        justify-content: start;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: 1227px) {
+            justify-content: space-between;
+        }
+    }
+
+    &__name {
+        color: #fff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.2em;
+        margin: 23px 0px 0px 0px;
+        max-width: 242px;
+    }
+
+    &__row-wrapper-2 {
+        margin-top: 40px;
+        justify-content: start;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: 1227px) {
+            justify-content: space-between;
+        }
+    }
+
+    &__column {
+        height: 29px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.difficult {
+    margin: 0px 47px 0px 0px;
+
+    @media (max-width: 1227px) {
+        margin: unset;
+    }
+
+    &__text {
+        color: #ffffff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1.25em;
+    }
+}
+
+.difficult-stars {
+    display: flex;
+    flex-direction: row;
+
+    &__filled-star {
+        content: url(../img/stars/filled_star.svg);
+    }
+
+    &__empty-star {
+        content: url(../img/stars/empty_star.svg);
+    }
+}
+
+.date {
+    margin: 0px 41px 0px 0px;
+
+    @media (max-width: 1227px) {
+        margin: unset;
+    }
+
+    &__data-text {
+        color: #ffffff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1.25em;
+    }
+
+    &__data-number {
+        height: 14px;
+        color: #ffffff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 1.25em;
+    }
+}
+
+.group {
+    @media (max-width: 1227px) {
+        margin: unset;
+    }
+
+    &__group-text {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 1.25em;
+        color: #fff;
+    }
+
+    &__group-number {
+        height: 14px;
+        color: #ffffff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 1.25em;
+    }
+}
+
+.location {
+    &__blue-background {
+        justify-content: center;
+        align-items: center;
+        padding: 6px 0;
+        display: flex;
+        width: 114.56px;
+        height: 29px;
+        background-color: #0266c1;
+
+        :last-child {
+            margin-left: 6.5px;
+        }
+    }
+
+    &__location-name {
+        color: #ffffff;
+    }
+
+    &__icon {
+        width: 9px;
+        height: 12px;
+    }
+}
+
+.duration-days {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 0px 28px;
+    height: 22px;
+
+    @media (max-width: 1227px) {
+        margin: 0px 0px 0px 12px;
+    }
+
+    &__icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    &__number {
+        margin: 0px 0px 0px 5px;
+        color: #fff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.duration-nights {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 0px 28px;
+    height: 22px;
+
+    @media (max-width: 1227px) {
+        margin: 0px 0px 0px 12px;
+    }
+
+    &__icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    &__number {
+        margin: 0px 0px 0px 5px;
+        color: #fff;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
+
+.show-all-tours {
+    &__title-text {
+        width: 100%;
+        color: #2d383f;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25em;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:after {
+            content: url(../img/tours/show_all_icon.svg);
+            display: inline-block;
+            margin: 0px 0px 0px 12px;
+            position: relative;
+            top: 1px;
+            transition: all 0.3s ease;
+        }
+
+        &.active:after {
+            transform: rotate(90deg);
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__text {
+        margin: 10px 0px 0px 0px;
+        text-align: start;
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+}
+
+.right-side-background {
+    position: absolute;
+    top: 340px;
+    height: 1000px;
+    background-image: url(../img/backgrounds/right-side-background.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+// ===================================================TRAINERS============================================================
+.learning {
+    margin: 87px 0px 0px 0px;
+}
+
+.trainers {
+    &__wraper {
+        margin: 56px 0px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.subtitle {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 1.24em;
+}
+
+.trainers-slider {
+    margin: 31px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.trainer-slide {
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.03);
+
+    &__content-wrapper {
+        padding: 14px 15px 23px;
+        width: 234px;
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+    }
+
+    &__person-image {
+        &_shadow {
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        }
+    }
+
+    &__row-wrapper {
+        padding: 22px 0px 0px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__person-name {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 133.98%;
+    }
+
+    &__person-vk-link {
+        width: 24px;
+        height: 24px;
+        border: 1px #9ac2e6 solid;
+    }
+
+    &__vk-icon-link {
+        padding: 7.5px 4.6px;
+    }
+
+    &__persone-about {
+        margin: 8px 0px 0px 0px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.33em;
+        color: #000000;
+    }
+}
+
+.subtitle-block {
+    margin: 39px 0px 0px 0px;
+}
+
+.education-processing {
+    margin: 35px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (max-width: 991.98px) {
+        flex-direction: column;
+    }
+
+    &__item {
+        display: flex;
+
+        @media (max-width: 991.98px) {
+            justify-content: start;
+            margin: 20px 0px 0px 0px;
+        }
+    }
+
+    &__icon {
+        margin: 0px 13px 0px 0px;
+        height: 25px;
+        width: 25px;
+
+        @media (max-width: 1227px) {
+            margin: 0px 6.5px 0px 6.5px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.43em;
+
+        @media (max-width: 991px) {
+            width: auto !important;
+        }
+    }
+
+    &__text-1 {
+        width: 198px;
+    }
+
+    &__text-2 {
+        width: 225px;
+    }
+
+    &__text-3 {
+        width: 180px;
+    }
+
+    &__text-4 {
+        width: 202px;
+    }
+}
+
+.line-divider {
+    margin: 20px 0px 0px 0px;
+    left: 0;
+    width: 100vw;
+    height: 1px;
+    background-color: #d9e7ea;
+
+    &__container {
+        top: -6px;
+        position: relative;
+        display: flex;
+        justify-content: start;
+    }
+
+    &__dot {
+        width: 14px;
+        height: 14px;
+        left: 771px;
+        top: 2363px;
+        background-color: #0266c1;
+        border-radius: 12px;
+        z-index: 1000;
+    }
+
+    &__dot-container-1 {
+        flex: 0 1 26.5%;
+    }
+
+    &__dot-container-2 {
+        flex: 0 1 29%;
+    }
+
+    &__dot-container-3 {
+        flex: 0 1 25%;
+    }
+}
+
+// ===================================================ABOUT US============================================================
+.about-us {
+    margin: 126px 0px 0px 0px;
+
+    &__row {
+        display: flex;
+    }
+
+    &__column-left {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 55%;
+
+        @media (max-width: 730px) {
+            display: none;
+        }
+    }
+
+    &__background {
+        z-index: -1;
+        position: absolute;
+        top: -176px;
+        left: 0px;
+
+        @media (max-width: 1227px) {
+            top: -176px;
+            left: -113px;
+        }
+
+        @media (max-width: 991px) {
+            top: -160px;
+            left: -290px;
+        }
+
+        @media (max-width: 730px) {
+            display: none;
+        }
+    }
+
+    &__column-right {
+        display: flex;
+        flex-direction: column;
+        flex: 0 1 45%;
+
+        @media (max-width: 730px) {
+            flex: 0 1 100%;
+        }
+    }
+}
+
+.block-text {
+    &__title {
+        &_color_white {
+            color: #ffffff;
+        }
+    }
+
+    &__paragraph {
+        margin: 29px 0px 0px 0px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: #000000;
+
+        &_margin_top_9px {
+            margin-top: 9px;
+        }
+
+        &_color_white {
+            color: #ffffff;
+        }
+
+        &_font_size_16px {
+            font-size: 16px;
+        }
+
+        &_max_width-826px {
+            max-width: 826px;
+        }
+    }
+}
+
+// ===================================================feedback============================================================
+.feedback {
+    margin: 90px 0px 0px 0px;
+
+    &__wraper {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.feedback-slider {
+    overflow: hidden;
+}
+
+.feedback-slide {
+    &__body {
+        display: flex;
+        max-width: 389px;
+        max-height: 504px;
+        justify-content: center;
+        background: #ffffff;
+        border: 1px solid #ffffff;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    &__column {
+        padding: 46px 35.5px 32px 36px;
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 425px) {
+            padding: 46px 0px 32px 0px;
+        }
+    }
+
+    &__person-container {
+        display: flex;
+    }
+
+    &__person-info {
+        margin: 0px 0px 0px 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__person-name {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1.35em;
+    }
+
+    &__text-block {
+        position: relative;
+        width: 317.5px;
+        margin: 32px 0px 0px 0px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.35em;
+    }
+
+    &__text-feedback {
+        &::before {
+            content: url(../img/breakets/breakets-top.svg);
+            position: absolute;
+            bottom: 100%;
+            transform: translate(-5px, 15px);
+        }
+
+        &::after {
+            content: url(../img/breakets/breakets-bot.svg);
+            position: absolute;
+            top: 100%;
+            transform: translate(-24px, -3px);
+        }
+    }
+}
+
+// ===================================================gallery============================================================
+.gallery {
+    margin: 95px 0px 0px 0px;
+
+    &__wraper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.gallery-slider {
+    margin: 46px 0px 0px 0px;
+    display: flex;
+
+    &__gallery-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__column {
+        height: 449px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+// ===================================================TRAINERS============================================================
+.questions {
+    background: url(../img/backgrounds/pine-forest-bachground.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__column {
+        height: 779px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__block-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.main-form {
+    margin: 44px 0px 0px 0px;
+    display: flex;
+
+    @media (max-width: 1050px) {
+        flex-direction: column;
+    }
+
+    &__name-input {
+        width: 354px;
+        height: 64px;
+        margin: 0px 0px 15px 18px;
+        padding: 20px 108px 17px 31px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    &__tel-input {
+        width: 354px;
+        height: 64px;
+        margin: 0px 0px 15px 18px;
+        padding: 20px 111px 17px 45px;
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    &__sumbit-input {
+        width: 246px;
+        height: 64px;
+        margin: 0px 0px 15px 18px;
+        background-color: #0266c1;
+        color: #ffffff;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.95;
+            background-color: #ffffff;
+            color: #0266c1;
+            transition: all ease 0.75s;
+        }
+    }
+}
+
+// ===================================================FOOTER============================================================
+.header {
+    &__row {
+        @media (max-width: 991.98px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.footer-icon-box {
+    margin: 14px 0px 0px 0px;
+    display: flex;
+    justify-content: center;
+
+    :not(:first-child) {
+        margin: 0px 0px 0px 23px;
+    }
+
+    &__icon-box {
+        align-items: center;
+        display: flex;
+        width: 29px;
+        height: 29px;
+        border: #2d383f solid 1px;
+        justify-content: center;
+        &:hover {
+            background-color: #1884e9;
+            transition: 0.5s;
+        }
+    }
+
+    &__icon-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.footer {
+    margin: 40px 0px 0px 0px;
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.privacy-policy {
+    margin: 34px 0px 40px 0px;
+    text-align: center;
+}
+
+// -----------------------------------------------ОБЩИЙ АДАПТИВ---------------------------------------------------------
+// PC
+@media (max-width: 1227px) {
+    [class*="__container"] {
+        max-width: 970px;
+    }
+
+    .menu__item {
+        padding: 0px 0px 0px 18px;
+    }
+
+    .header__tel {
+        flex: 0 0 156px;
+    }
+}
+
+// TABLET
+@media (max-width: 991.98px) {
+    [class*="__container"] {
+        max-width: 750px;
+    }
+
+    .header__tel {
+        flex: 0 0 208px;
+    }
+}
+
+// MOBILE
+@media (max-width: 767.98px) {
+    [class*="__container"] {
+        max-width: none;
+    }
+}
+
+@media (max-width: 470px) {
+    .header__logo {
+        flex: 0 0 70px;
+        overflow: hidden;
+    }
+}
